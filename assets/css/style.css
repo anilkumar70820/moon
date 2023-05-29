@@ -92,3 +92,10 @@
         border: 3px solid rgba(34, 162, 255, 0.28);
     }
 }
+@media (max-width:576px) {
+    .pos-absoulte {
+        position: absolute;
+        top: -40px;
+        right: 0;
+    }   
+}
