@@ -49,7 +49,7 @@
     border-radius: 12px;
 }
 
-.card-box:hover {
+.col-hover:hover .card-box {
     border: 1px solid rgba(255, 255, 255, 0.1);
     background-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
@@ -65,37 +65,39 @@
 
 .box-2 {
     max-width: 421px;
-    background: linear-gradient(107.21deg, rgba(255, 255, 255, 0.26) 2.84%, rgba(255, 255, 255, 0.06) 73.23%);
+    border-radius: 7px;
+    border: 3px solid transparent;
+    background: transparent;
+    position: relative;
+    padding: 3px;
+}
+
+.box-2::after {
+    content: "";
+    position: absolute;
+    border-radius: 7px;
+    padding: 3px;
+    background: linear-gradient(-213deg, rgba(255, 125, 250, 0.56) 12.39%, rgba(253, 0, 243, 0.34) 48.48%, rgba(34, 162, 255, 0.35) 64.08%, rgba(34, 162, 255, 0.28) 76.52%);
+    inset: 0;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    pointer-events: none;
+}
+
+.box {
+    background: linear-gradient(107.21deg, rgba(255, 255, 255, 0.26) 2.84%, rgba(255, 255, 255, 0.06) 73.23%) padding-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 24px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(20px);
-    border-radius: 7px;
-    border: 3px solid palevioletred;
-    animation-name: example;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
+    max-width: 421px;
 }
 
-@keyframes example {
-    0% {
-        border: 3px solid rgba(34, 162, 255, 0.28);
-    }
+/* 
 
-    25% {
-        border: 3px solid rgba(253, 0, 243, 0.34);
-    }
-
-    50% {
-        border: 3px solid rgba(253, 0, 243, 0.34);
-    }
-
-    100% {
-        border: 3px solid rgba(34, 162, 255, 0.28);
-    }
-}
 @media (max-width:576px) {
     .pos-absoulte {
         position: absolute;
         top: -40px;
         right: 0;
-    }   
+    }
 }
